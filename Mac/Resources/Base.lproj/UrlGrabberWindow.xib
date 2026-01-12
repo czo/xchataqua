@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="24506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24506"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSViewController">
@@ -15,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="648" height="415"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <scrollView horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="38">
+                <scrollView fixedFrame="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38">
                     <rect key="frame" x="20" y="60" width="608" height="335"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" id="0JO-x0-eJf">
@@ -24,14 +26,13 @@
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" id="36">
                                 <rect key="frame" x="0.0" y="0.0" width="606" height="333"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn editable="NO" width="603" minWidth="4" maxWidth="1000" id="42">
+                                    <tableColumn editable="NO" width="594" minWidth="4" maxWidth="1000" id="42">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                         </tableHeaderCell>
@@ -50,16 +51,16 @@
                             </tableView>
                         </subviews>
                     </clipView>
-                    <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="50">
-                        <rect key="frame" x="1" y="318" width="606" height="16"/>
+                    <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="50">
+                        <rect key="frame" x="1" y="317" width="606" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="49">
-                        <rect key="frame" x="591" y="1" width="16" height="333"/>
+                    <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="49">
+                        <rect key="frame" x="590" y="1" width="17" height="333"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <button verticalHuggingPriority="750" id="35">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="35">
                     <rect key="frame" x="14" y="12" width="127" height="32"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <buttonCell key="cell" type="push" title="Clear" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="47">
@@ -70,7 +71,7 @@
                         <action selector="removeAllURLs:" target="5" id="67"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" id="19">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19">
                     <rect key="frame" x="141" y="12" width="127" height="32"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="46">
@@ -85,6 +86,7 @@
             <connections>
                 <outlet property="urlTableView" destination="36" id="62"/>
             </connections>
+            <point key="canvasLocation" x="140" y="155"/>
         </customView>
     </objects>
 </document>
