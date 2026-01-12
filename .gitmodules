@@ -1,12 +1,12 @@
 [submodule "xchat"]
 	path = xchat
-	url = git://github.com/xchataqua/xchat.git
+	url = ../xchataqua-xchat
 [submodule "glib"]
 	path = glib
-	url = git://github.com/xchataqua/glib.git
+	url = ../xchataqua-glib
 [submodule "Mac/Plugins/ruby"]
 	path = Mac/Plugins/ruby
-	url = git://github.com/xchataqua/xchatruby.git
+	url = ../xchataqua-xchatruby
 [submodule "Resources/theme/Solarized"]
 	path = Resources/theme/Solarized
-	url = git://github.com/xchataqua/xchat-colors-solarized.git
+	url = ../xchataqua-xchat-colors-solarized
