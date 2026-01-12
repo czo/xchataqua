@@ -17,7 +17,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
             <rect key="contentRect" x="368" y="588" width="355" height="241"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1409"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1169"/>
             <value key="minSize" type="size" width="355" height="241"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="355" height="241"/>
@@ -37,7 +37,7 @@
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn width="137" minWidth="96.810997009277344" maxWidth="1000" id="238">
+                                        <tableColumn width="108" minWidth="96.810997009277344" maxWidth="1000" id="238">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Command">
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
@@ -149,7 +149,7 @@
         </window>
     </objects>
     <resources>
-        <image name="NSAddTemplate" width="18" height="16"/>
-        <image name="NSRemoveTemplate" width="18" height="4"/>
+        <image name="NSAddTemplate" width="18" height="17"/>
+        <image name="NSRemoveTemplate" width="18" height="5"/>
     </resources>
 </document>

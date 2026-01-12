@@ -60,7 +60,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <imageCell key="cell" refusesFirstResponder="YES" focusRingType="none" alignment="left" image="green" id="505"/>
                                                 </imageView>
-                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="445">
+                                                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="445">
                                                     <rect key="frame" x="17" y="7" width="66" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="506">
@@ -69,7 +69,7 @@
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="432">
+                                                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="432">
                                                     <rect key="frame" x="88" y="2" width="467" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="503">
@@ -230,7 +230,7 @@
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                         </scrollView>
-                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="417">
+                                        <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="417">
                                             <rect key="frame" x="-1" y="571" width="202" height="20"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" drawsBackground="YES" id="497">
@@ -262,7 +262,7 @@
                             <rect key="frame" x="0.0" y="589" width="800" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="406" customClass="SGLockableTextField">
+                                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="406" customClass="SGLockableTextField">
                                     <rect key="frame" x="0.0" y="1" width="575" height="19"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="488">
@@ -338,7 +338,7 @@
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
                                 </button>
-                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="411">
+                                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="411">
                                     <rect key="frame" x="722" y="-1" width="28" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" alignment="left" title="9" drawsBackground="YES" id="493">
@@ -355,7 +355,7 @@
                                         <font key="font" metaFont="smallSystem"/>
                                     </buttonCell>
                                 </button>
-                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="409">
+                                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="409">
                                     <rect key="frame" x="769" y="-1" width="31" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="491">
