@@ -1022,9 +1022,6 @@ void fe_tray_set_icon (feicon icon)
 }
 void fe_tray_set_tooltip (const char *text)
 {
-    #if ENABLE_GROWL
-    [[AquaChat sharedAquaChat] growl:@(text) title:nil];
-    #endif
     {
         NSUserNotification *notification = [[NSUserNotification alloc] init];
         notification.informativeText = @(text);
@@ -1039,9 +1036,6 @@ void fe_tray_set_tooltip (const char *text)
 
 void fe_tray_set_balloon (const char *title, const char *text)
 {
-    #if ENABLE_GROWL
-    [[AquaChat sharedAquaChat] growl:@(text) title:@(title)];
-    #endif
     {
         NSUserNotification *notification = [[NSUserNotification alloc] init];
         notification.title = @(title);

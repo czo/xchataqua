@@ -71,9 +71,6 @@ extern struct XATextEventItem XATextEvents[];
 @public
     NSString *name;
     NSNumber *sound;
-    #if ENABLE_GROWL
-    NSNumber *growl;
-    #endif
     NSNumber *notification;
     NSNumber *show;
     NSNumber *bounce;
@@ -101,9 +98,6 @@ extern struct XATextEventItem XATextEvents[];
         struct XATextEventItem *info = &XATextEvents[event];
         
         self->sound = [[NSNumber alloc] initWithInteger:soundIndex];
-        #if ENABLE_GROWL
-        self->growl = [[NSNumber alloc] initWithInteger:info->growl];
-        #endif
         self->notification = [[NSNumber alloc] initWithInteger:info->notification];
         self->show  = [[NSNumber alloc] initWithInteger:info->show];
         self->bounce= [[NSNumber alloc] initWithInteger:info->bounce];
@@ -115,9 +109,6 @@ extern struct XATextEventItem XATextEvents[];
 {
     [name release];
     [sound release];
-    #if ENABLE_GROWL
-    [growl release];
-    #endif
     [notification release];
     [bounce release];
     [show release];
@@ -350,9 +341,6 @@ extern struct XATextEventItem XATextEvents[];
     [bcell setButtonType:NSSwitchButton];
     [bcell setControlSize:NSControlSizeMini];
     [bcell setAllowsMixedState:YES];
-    #if ENABLE_GROWL
-    [[soundsTableView tableColumns][2] setDataCell:bcell];
-    #endif
     [[soundsTableView tableColumns][4] setDataCell:bcell];
     [bcell release];
     
@@ -553,11 +541,7 @@ extern struct XATextEventItem XATextEvents[];
     {
         case 0: return item->name;
         case 1: return item->sound;
-        #if ENABLE_GROWL
-        case 2: return item->growl;
-        #else
         case 2: return 0;
-        #endif
         case 3: return item->notification;
         case 4: return item->bounce;
         case 5: return item->show;
@@ -595,16 +579,8 @@ extern struct XATextEventItem XATextEvents[];
             
             break;
         }
-        #if ENABLE_GROWL
-        case 2:
-            [item->growl release];
-            item->growl = [object retain];
-            XATextEvents[row].growl = [item->growl intValue];
-            break;
-        #else
         case 2:
             break;
-        #endif
         case 3:
             [item->notification release];
             item->notification = [object retain];

@@ -73,9 +73,6 @@ struct XATextEventItem XATextEvents[NUM_XP];
 - (void) loadMenuPreferences;
 - (void) toggleMenuItem:(id)sender;
 - (void) updateUsermenu;
-#if ENABLE_GROWL
-- (void) growl:(NSString *)text title:(NSString *)title;
-#endif
 - (void) setFont:(const char *) fontName;
 - (NSUInteger) numberOfActiveDccFileTransfer;
 
@@ -115,10 +112,7 @@ AquaChat *AquaChatSharedObject;
 - (void) awakeFromNib
 {   
     AquaChatSharedObject = self;
-    #if ENABLE_GROWL
-    [GrowlApplicationBridge setGrowlDelegate:self];
-    #endif
-    
+
     [self loadEventInfo];
     
     self->soundCache = [[NSMutableDictionary alloc] init];
@@ -235,22 +229,6 @@ AquaChat *AquaChatSharedObject;
     // Boiled down:
     //    Perform the action if our pref is -1 or we are in the background.
 
-    #if ENABLE_GROWL
-    if (info->growl && (info->growl == -1 || bg))
-    {
-        char o[4096];
-        format_event (sess, event, args, o, sizeof (o), 1);
-        if (o[0])
-        {
-            NSString *title = @(te[event].name);
-            char *x = strip_color (o, -1, STRIP_ALL);
-            NSString *description = @(x);
-            [self growl:description title:title];
-            free (x);
-        }
-    }
-    #endif
-    
     if (info->notification && (NSClassFromString(@"NSUserNotificationCenter") != nil))
     {
         char o[4096];
@@ -487,21 +465,6 @@ AquaChat *AquaChatSharedObject;
 {
     [(IgnoreWindow *)[UtilityTabOrWindowView utilityIfExistsByKey:IgnoreWindowKey] update:level];
 }
-
-#if ENABLE_GROWL
-- (void) growl:(NSString *)text title:(NSString *)title
-{
-    if ( title == nil ) title = @PRODUCT_NAME;
-    [GrowlApplicationBridge notifyWithTitle:title
-                                description:text
-                           notificationName:@"X-Chat"
-                                   iconData:nil
-                                   priority:0
-                                   isSticky:NO
-                               clickContext:nil];
-    
-}
-#endif
 
 - (void) updateDcc:(struct DCC *) dcc
 {
@@ -1075,20 +1038,6 @@ AquaChat *AquaChatSharedObject;
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"irc://irc.freenode.org/#xchat-aqua"]];
 }
 
-#if ENABLE_GROWL
-#pragma mark GrowlApplicationBridgeDelegate
-
-- (NSDictionary *) registrationDictionaryForGrowl
-{
-    return @{GROWL_NOTIFICATIONS_ALL: @[@"X-Chat"],
-            GROWL_NOTIFICATIONS_DEFAULT: @[@"X-Chat"]};
-}
-
-- (BOOL)hasNetworkClientEntitlement {
-    return YES;
-}
-#endif
-
 @end
 
 #pragma mark -
@@ -1107,9 +1056,6 @@ AquaChat *AquaChatSharedObject;
         struct XATextEventItem *event = &XATextEvents[i];
         char *name = te[i].name;
 
-        #if ENABLE_GROWL
-        event->growl = [dict[[NSString stringWithFormat:@"%s_growl", name]] integerValue];
-        #endif
         event->notification = [dict[[NSString stringWithFormat:@"%s_notification", name]] integerValue];
         event->show = [dict[[NSString stringWithFormat:@"%s_show", name]] integerValue];
         event->bounce = [dict[[NSString stringWithFormat:@"%s_bounce", name]] integerValue];
@@ -1124,12 +1070,6 @@ AquaChat *AquaChatSharedObject;
         struct XATextEventItem *event = &XATextEvents[i];
         char *name = te[i].name;
 
-        #if ENABLE_GROWL
-        if (event->growl)
-        {
-            dict[[NSString stringWithFormat:@"%s_growl", name]] = @(event->growl);
-        }
-        #endif
         if (event->notification)
         {
             dict[[NSString stringWithFormat:@"%s_notification", name]] = @(event->notification);
