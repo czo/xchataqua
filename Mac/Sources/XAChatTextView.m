@@ -423,7 +423,7 @@ static NSCursor *XAChatTextViewSizableCursor;
         {
             const char *substring = [[s substringWithRange:range] UTF8String];
             NSColor *color;
-            if (substring)
+            if (substring && [self currentSession] && [self currentSession]->me && [self currentSession]->me->nick  )
             {
                 if (!strcasecmp(substring, [self currentSession]->me->nick))
                 {
