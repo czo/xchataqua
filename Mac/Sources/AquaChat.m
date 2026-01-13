@@ -1008,25 +1008,25 @@ AquaChat *AquaChatSharedObject;
 // Open developer page
 - (void) openHomepage:(id)sender
 {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://xchataqua.github.com/"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/czo/xchataqua/"]];
 }
 
 // Open the X-Chat Aqua download page (same as homepage for now).
 - (void) openDownload:(id)sender
 {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://github.com/xchataqua/xchataqua/downloads"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/czo/xchataqua/releases"]];
 }
 
 // Open the X-Chat Aqua Release Notes.
 - (void) showReleaseNotes:(id)sender
 {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/xchataqua/xchataqua/tags"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/czo/xchataqua/tags"]];
 }
 
 // Open issue tracker
 - (void) openIssues:(id)sender
 {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://github.com/xchataqua/xchataqua/issues"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/czo/xchataqua/issues"]];
 }
 
 - (void)openIRCChannel:(id)sender {
