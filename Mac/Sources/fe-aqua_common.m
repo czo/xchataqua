@@ -81,6 +81,9 @@ nick_command (struct session * sess, char *cmd)
 void
 nick_command_parse (struct session *sess, const char *cmd, const char *nick, const char *allnick)
 {
+    if ( !cmd || !nick || !allnick ) {
+        return;
+    }
     char *buf;
     const char *host = [NSLocalizedStringFromTable(@"Host unknown", @"xchat", @"") UTF8String];
     struct User *user;
