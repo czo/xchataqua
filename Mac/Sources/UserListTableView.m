@@ -8,6 +8,8 @@
 
 #import "UserListTableView.h"
 #import "ChatViewController.h"
+#import "AquaChat.h"
+#import "ColorPalette.h"
 
 @implementation UserListTableView
 
@@ -28,6 +30,17 @@
     if ([delegate respondsToSelector:@selector(menuForEvent:rowIndexes:)])
         return [delegate menuForEvent:theEvent rowIndexes:selectedRows];
     return [super menuForEvent:theEvent];
+}
+
+- (void)drawRow:(NSInteger)rowIndex clipRect:(NSRect)clipRect {
+    if ([self isRowSelected:rowIndex]) {
+        ColorPalette *p = [[AquaChat sharedAquaChat] palette];
+
+        NSColor *backgroundColor = [[NSColor colorWithWhite:0.85 alpha:1.0] colorWithAlphaComponent:1.0];
+        [backgroundColor setFill];
+        NSRectFill([self rectOfRow:rowIndex]);
+    }
+    [super drawRow:rowIndex clipRect:clipRect];
 }
 
 @end
