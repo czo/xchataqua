@@ -949,15 +949,15 @@ typedef OSStatus
     [[[NSColor blackColor] colorWithAlphaComponent:0.05] set];
     [NSBezierPath fillRect:r];
     
-    [NSBezierPath setDefaultLineWidth:1];
-    [[NSGraphicsContext currentContext] setShouldAntialias:false];
-    
-    r = NSInsetRect(r,-0.5,-0.5);
-    [[[NSColor grayColor] colorWithAlphaComponent:0.25] set];
-    [NSBezierPath strokeRect:r];
-    r = NSInsetRect(r,-1,-1);
-    [[[NSColor grayColor] colorWithAlphaComponent:0.5] set];
-    [NSBezierPath strokeRect:r];
+//    [NSBezierPath setDefaultLineWidth:1];
+//    [[NSGraphicsContext currentContext] setShouldAntialias:false];
+//    
+//    r = NSInsetRect(r,-0.5,-0.5);
+//    [[[NSColor grayColor] colorWithAlphaComponent:0.25] set];
+//    [NSBezierPath strokeRect:r];
+//    r = NSInsetRect(r,-1,-1);
+//    [[[NSColor grayColor] colorWithAlphaComponent:0.5] set];
+//    [NSBezierPath strokeRect:r];
 #endif // BACKGROUND_VERSION
 }
 
