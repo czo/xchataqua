@@ -327,20 +327,6 @@ fe_init (void)
     NSString *bundle = [[NSBundle mainBundle] bundlePath];
     NSString *cwd = [NSString stringWithFormat:@"%@/..", bundle];
     [[NSFileManager defaultManager] changeCurrentDirectoryPath:cwd];
-    
-#if CONFIG_Azure
-    NSURL *configDirectory = [XAFileUtil findSupportFolderFor:@PRODUCT_NAME];
-    if ([XAFileUtil isSymLink:configDirectory]) {
-        if ([SGAlert confirmWithString:NSLocalizedStringFromTable(
-          @"This version of " @PRODUCT_NAME @" is sandboxed. "
-          @PRODUCT_NAME" tried to migrate your configuration, but it seems to have failed. "
-          @"Do you want to download a recovery script for this problem?", @"xchataqua", @"")])
-        {
-            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/xchataqua/xchataqua/blob/master/README.md#i-lost-all-configurations-after-update-to-111-or-later"]];
-            [NSApp terminate:nil];
-        }
-    }
-#endif
 }
 
 #import <Foundation/NSDebug.h>

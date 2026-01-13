@@ -30,8 +30,4 @@
     #import "fe-aqua_common.h"
 #endif
 
-#ifdef CONFIG_Azure
-    #define PRODUCT_NAME "XChat Azure"
-#else
-    #define PRODUCT_NAME "X-Chat Aqua"
-#endif
+#define PRODUCT_NAME "X-Chat Aqua"
