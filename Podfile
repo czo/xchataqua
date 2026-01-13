@@ -6,16 +6,12 @@ target :'XChat Azure' do
     project 'XChatAqua.xcodeproj'
     pod 'FoundationExtension'
     pod 'libintl-alternative'
-    pod 'Fabric'
-    pod 'Crashlytics'
 end
 
 target :'XChat Aqua' do
     project 'XChatAqua.xcodeproj'
     pod 'FoundationExtension'
     pod 'libintl-alternative'
-    pod 'Fabric'
-    pod 'Crashlytics'
 end
 
 target :'XChat iPhone' do

@@ -15,9 +15,6 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA */
 
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
-
 #include "outbound.h"
 #include "server.h"
 #include "cfgfiles.h"
@@ -308,8 +305,6 @@ AquaChat *AquaChatSharedObject;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
-    [Fabric with:@[[Crashlytics class]]];
-
     NSNotificationCenter *center = [[NSWorkspace sharedWorkspace] notificationCenter];
     
     [center addObserver:self
